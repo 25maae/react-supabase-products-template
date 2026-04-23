@@ -4,7 +4,11 @@ export default function ProductCard({ product }) {
   return (
     <Link to={`/products/${product.id}`} className="product-card">
       <div className="product-image">
-        {product.image ? <img src={product.image} alt={product.title} /> : <div className="image-placeholder">?</div>}
+        {product.image ? (
+          <img src={product.image} alt={product.title} />
+        ) : (
+          <div className="image-placeholder">?</div>
+        )}
       </div>
       <div className="product-info">
         <h3>{product.title}</h3>

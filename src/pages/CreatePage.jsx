@@ -2,22 +2,20 @@ import { useNavigate } from "react-router";
 import ProductForm from "../components/ProductForm";
 
 const URL = import.meta.env.VITE_SUPABASE_URL;
-const APIKEY = import.meta.env.VITE_SUPABASE_APIKEY;
+const headers = {
+  apikey: import.meta.env.VITE_SUPABASE_APIKEY,
+  "Content-Type": "application/json",
+};
 
 export default function CreatePage() {
   const navigate = useNavigate();
 
   async function handleSubmit(productData) {
-    console.log("Product created:", productData);
     await fetch(URL, {
       method: "POST",
-      headers: {
-        apikey: APIKEY,
-        "Content-Type": "application/json",
-      },
+      headers,
       body: JSON.stringify(productData),
     });
-
     navigate("/");
   }
 

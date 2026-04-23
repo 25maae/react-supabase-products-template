@@ -28,7 +28,7 @@ export default function ProductForm({ onSubmit, productToUpdate }) {
             name="title"
             placeholder="Product title"
             value={title}
-            onChange={e => setTitle(e.target.value)}
+            onChange={(e) => setTitle(e.target.value)}
             required
           />
         </div>
@@ -42,7 +42,7 @@ export default function ProductForm({ onSubmit, productToUpdate }) {
             step="0.01"
             placeholder="0.00"
             value={price}
-            onChange={e => setPrice(e.target.value)}
+            onChange={(e) => setPrice(e.target.value)}
             required
           />
         </div>
@@ -53,13 +53,17 @@ export default function ProductForm({ onSubmit, productToUpdate }) {
             name="image"
             placeholder="https://..."
             value={image}
-            onChange={e => setImage(e.target.value)}
+            onChange={(e) => setImage(e.target.value)}
           />
           {image && <img src={image} alt="Preview" className="image-preview" />}
         </div>
       </div>
       <div className="form-actions">
-        <button type="button" className="btn btn-secondary" onClick={handleCancel}>
+        <button
+          type="button"
+          className="btn btn-secondary"
+          onClick={handleCancel}
+        >
           Cancel
         </button>
         <button type="submit" className="btn btn-primary">
